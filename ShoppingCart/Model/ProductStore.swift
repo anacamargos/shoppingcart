@@ -9,7 +9,6 @@
 import UIKit
 
 struct Product {
-    var id: Int
     var title: String
     var price: Double
     var image: UIImage
@@ -18,8 +17,17 @@ struct Product {
 class ProductStore {
     
     var products: [Product] = [
-        Product(id: 1, title: "iPad Pro", price: 599, image: #imageLiteral(resourceName: "img_ipad") ),
-        Product(id: 2, title: "Apple Watch", price: 299, image: #imageLiteral(resourceName: "img_watch") ),
-        Product(id: 3, title: "Apple TV", price: 199, image: #imageLiteral(resourceName: "img_tv") )
+        Product(title: "iPad Pro", price: 599, image: #imageLiteral(resourceName: "img_ipad") ),
+        Product(title: "Apple Watch", price: 299, image: #imageLiteral(resourceName: "img_watch") ),
+        Product(title: "Apple TV", price: 199, image: #imageLiteral(resourceName: "img_tv") )
     ]
+    
+    func getPriceByName(title: String) -> Double? {
+        for product in products {
+            if product.title == title {
+                return product.price
+            }
+        }
+        return nil
+    }
 }

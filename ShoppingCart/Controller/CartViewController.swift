@@ -11,6 +11,8 @@ import UIKit
 class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalValueLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
     
     var productStore: ProductStore!
     

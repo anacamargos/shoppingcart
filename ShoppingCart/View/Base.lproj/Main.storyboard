@@ -170,7 +170,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Shopping" id="04O-yf-91Z"/>
                     <connections>
+                        <outlet property="stackView" destination="2fI-Ox-fEo" id="6qy-BE-uxb"/>
                         <outlet property="tableView" destination="os8-OX-mZG" id="5YT-39-AoE"/>
+                        <outlet property="totalValueLabel" destination="kUY-Sn-P7E" id="MD5-2K-n17"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBe-hF-bco" userLabel="First Responder" sceneMemberID="firstResponder"/>

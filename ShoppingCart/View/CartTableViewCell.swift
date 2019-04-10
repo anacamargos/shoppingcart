@@ -35,7 +35,10 @@ class CartTableViewCell: UITableViewCell {
     
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        
         self.productQuantityLabel.text = Int(sender.value).description
+        var price = ProductStore().getPriceByName(title: self.productTitleLabel.text!)
+        
     }
     
 }
