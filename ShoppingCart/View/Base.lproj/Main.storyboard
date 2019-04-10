@@ -75,6 +75,9 @@
                                                         </label>
                                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iTd-Up-v50">
                                                             <rect key="frame" x="57" y="0.0" width="94" height="29"/>
+                                                            <connections>
+                                                                <action selector="stepperValueChanged:" destination="8a2-Tj-F13" eventType="valueChanged" id="Pnz-Fm-Vkk"/>
+                                                            </connections>
                                                         </stepper>
                                                     </subviews>
                                                 </stackView>
@@ -92,6 +95,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="productImageView" destination="Nrk-tp-lTn" id="RzT-Vt-Y8B"/>
+                                            <outlet property="productPriceLabel" destination="LqX-o1-Upl" id="YFH-l8-Hh3"/>
+                                            <outlet property="productQuantityLabel" destination="bIe-2e-iUZ" id="bgB-Qa-GGT"/>
+                                            <outlet property="productTitleLabel" destination="9WG-fY-ftv" id="O70-Su-0Ey"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
