@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, myDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalValueLabel: UILabel!
@@ -18,6 +18,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.totalValueLabel.text = "$0.0"
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -32,7 +34,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         
-        //cell.productImageView.image = UIImage(named: "img_ipad")
         cell.productImageView.backgroundColor = UIColor.red
         
         switch indexPath.row {
@@ -45,8 +46,22 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             cell.configure(currentProduct: productStore.products[0])
         }
-
+        
+        cell.delegate = self
+                
         return cell
     }
-
+    
+    func myDelegate(value: Int, productName: String) {
+        if let position = productStore.getPositionByName(title: productName) {
+            productStore.products[position].setQuantity(quantity: value)
+            updateTotalValue()
+        }
+        
+    }
+    
+    func updateTotalValue() {
+        totalValueLabel.text = "$\(productStore.calculateTotal())"
+    }
+    
 }

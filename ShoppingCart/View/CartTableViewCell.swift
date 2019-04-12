@@ -14,12 +14,14 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productQuantityLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    
+    var delegate: myDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.productQuantityLabel.text = "0"
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,13 +34,13 @@ class CartTableViewCell: UITableViewCell {
         self.productPriceLabel.text = "\(currentProduct.price)"
         self.productImageView.image = currentProduct.image
     }
-    
-
-    @IBAction func stepperValueChanged(_ sender: UIStepper) {
         
-        self.productQuantityLabel.text = Int(sender.value).description
-        var price = ProductStore().getPriceByName(title: self.productTitleLabel.text!)
-        
+    @IBAction func didTapStepper(_ sender: UIStepper) {
+        productQuantityLabel.text = Int(sender.value).description
+        delegate?.myDelegate(value: Int(sender.value), productName: productTitleLabel.text! )
     }
-    
+}
+
+protocol myDelegate {
+    func myDelegate(value: Int, productName: String)
 }
