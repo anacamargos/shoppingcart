@@ -64,4 +64,14 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         totalValueLabel.text = "$\(productStore.calculateTotal())"
     }
     
+    @IBAction func didTapPlaceOrder(_ sender: Any) {
+        performSegue(withIdentifier: "finishPurchase", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "finishPurchase" {
+            let checkoutVC = segue.destination as! CheckoutViewController
+            checkoutVC.totalValue = self.totalValueLabel.text!
+        }
+    }
 }

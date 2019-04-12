@@ -14,6 +14,7 @@
 		ED04F1F0225E6B2500E1DF8A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04F1EF225E6B2500E1DF8A /* CartViewController.swift */; };
 		ED04F1F2225E6B4A00E1DF8A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04F1F1225E6B4A00E1DF8A /* CartTableViewCell.swift */; };
 		ED04F1F7225E859900E1DF8A /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04F1F6225E859900E1DF8A /* ProductStore.swift */; };
+		ED0CBA6E2261295900FE214C /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CBA6D2261295900FE214C /* CheckoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ED04F1EF225E6B2500E1DF8A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		ED04F1F1225E6B4A00E1DF8A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		ED04F1F6225E859900E1DF8A /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		ED0CBA6D2261295900FE214C /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				ED04F1EF225E6B2500E1DF8A /* CartViewController.swift */,
+				ED0CBA6D2261295900FE214C /* CheckoutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				ED04F1F2225E6B4A00E1DF8A /* CartTableViewCell.swift in Sources */,
 				ED04F1F0225E6B2500E1DF8A /* CartViewController.swift in Sources */,
 				ED04F1DC225E6A9400E1DF8A /* AppDelegate.swift in Sources */,
+				ED0CBA6E2261295900FE214C /* CheckoutViewController.swift in Sources */,
 				ED04F1F7225E859900E1DF8A /* ProductStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

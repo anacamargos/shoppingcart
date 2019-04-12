@@ -147,7 +147,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aPC-hz-lJL" kind="show" identifier="finishPurchase" id="7fG-6w-HHu"/>
+                                    <action selector="didTapPlaceOrder:" destination="0ay-cq-13P" eventType="touchUpInside" id="wz9-pj-EGE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,16 +177,17 @@
                         <outlet property="stackView" destination="2fI-Ox-fEo" id="6qy-BE-uxb"/>
                         <outlet property="tableView" destination="os8-OX-mZG" id="5YT-39-AoE"/>
                         <outlet property="totalValueLabel" destination="kUY-Sn-P7E" id="MD5-2K-n17"/>
+                        <segue destination="aPC-hz-lJL" kind="show" identifier="finishPurchase" id="M4Y-rd-cEC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBe-hF-bco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475.3623188405797" y="176.9021739130435"/>
+            <point key="canvasLocation" x="1446" y="177"/>
         </scene>
-        <!--View Controller-->
+        <!--Checkout View Controller-->
         <scene sceneID="QiO-Mi-Utb">
             <objects>
-                <viewController id="aPC-hz-lJL" sceneMemberID="viewController">
+                <viewController id="aPC-hz-lJL" customClass="CheckoutViewController" customModule="ShoppingCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rgw-BB-nOb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,6 +285,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RmH-AJ-oZA"/>
                     </view>
+                    <connections>
+                        <outlet property="totalValueLabel" destination="7R4-Cn-Gsh" id="BXV-iT-hdn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9b-WS-Ntq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
