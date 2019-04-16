@@ -274,6 +274,9 @@
                                 <state key="normal" title="Place Order →">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="placeOrderDidSelect:" destination="aPC-hz-lJL" eventType="touchUpInside" id="rkS-Hd-qLO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

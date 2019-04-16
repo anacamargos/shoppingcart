@@ -42,6 +42,25 @@ class CheckoutViewController: UIViewController {
         
         self.totalValueLabel.text = "$\(originalTotalValue)"
     }
+    
+    @IBAction func placeOrderDidSelect(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Confirm Order", message: "Please confirm that you want to make a payment of \(totalValueLabel.text!)!", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let confirm = UIAlertAction(title: "Confirm", style: .default) { (action) in
+            let sucessActionSheet = UIAlertController(title: "Thank you", message: "Your payment of \(self.totalValueLabel.text!) was processed successfully! Please check your email for your order receipt email and shipping information.", preferredStyle: .actionSheet)
+            let continueShoppingAction = UIAlertAction(title: "Let's Shop More!", style: .default, handler: { (action) in
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+            
+            sucessActionSheet.addAction(continueShoppingAction)
+            self.present(sucessActionSheet, animated: true, completion: nil)
+        }
+        alertController.addAction(cancel)
+        alertController.addAction(confirm)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension String {
