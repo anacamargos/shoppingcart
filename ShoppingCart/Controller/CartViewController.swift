@@ -27,6 +27,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.productStore = ProductStore()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.totalValueLabel.text = "$0.0"
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
